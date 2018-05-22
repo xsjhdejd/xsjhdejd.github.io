@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(3, 42, 104);
+    font-family: 'Annie Use Your Telescope', cursive;
+}
+.Title{
+    text-align: center ;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 25px;
+    color: rgb(8, 67, 163);
+}
+.Title h1{
+    font-size: 100px;
+    margin: 0px;
+    color: rgb(19, 96, 219);
+}
+#Type{
+    width: 250px;
+    height: 900px;
+    
+}
+#Background_Information{
+    width: 750px;
+    height: 900;
+}
