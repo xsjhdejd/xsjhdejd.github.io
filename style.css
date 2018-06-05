@@ -16,10 +16,64 @@ body{
 }
 #Type{
     width: 250px;
-    height: 900px;
-    
+    height: 500px;
+    float: right;
+    text-align: center;
 }
 #Background_Information{
-    width: 750px;
-    height: 900;
+    width: 1000px;
+    height: 250px;
+    text-align: left;
+    float: left;
+}
+.Info{
+    font-size: 20px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 25px;
+    border-color: rgb(153, 192, 255);
+    color: rgb(213, 217, 224);
+}
+#Ninja{
+    width: 250px;
+    height: 250px;
+    
+}
+#Patrick_Gay{
+    float: left;
+    
+}
+#Video{
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 25px;
+    border-color:rgb(153, 192, 255);
+    
+}
+#Video_1{
+    display: inline-block
+}
+#Video_2{
+    display: inline-block
+}
+#Video_3{
+    display: inline-block
+}
+#Patrick_SUCK{
+    clear: both;
+}
+.Title_VideoParagraphs{
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 25px;
+    border-color:rgb(153, 192, 255); 
+    font-size: 30px;
+    text-align: center;
+    color: rgb(213, 217, 224);
+    margin: 0px;
+}
+#Pokemonss{
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
 }
