@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+            <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope" rel="stylesheet">
+        <style>
+            body{
+    font-family: 'Annie Use Your Telescope', cursive;
+}
+        
+            table tr td{
+                width: 33.33%;
+                border-style: solid;
+    border-width: 5px;
+    border-radius: 25px;
+    color: rgb(8, 67, 163);
+    margin: 10px;
+text-align: center;
+            }
+            img{
+                width: 100%;
+               
+            }
+        </style>
+    </head>
+    <body>
+        <table>     <!-- table -->
+            <tr>        <!-- table row -->
+                <td>        <!-- table data / cell -->
+                    <img src="./img/coke.png" alt="">
+                </td>
+                <td>
+                    <img src="./img/pizza2.jpg" alt="">
+                </td>
+                <td>
+                    <img src="./img/thumb.jpg" alt="">
+                </td>
+                <tr>        <!-- table row -->
+                    <td>        <!-- table data / cell -->
+                        <h3>Coke</h3>
+                        <button onclick="showpricecoke()">Show price!</button>
+                        <div id="Cokeprice"></div>
+                    </td>
+                    <td>
+                        <h3>Pizza</h3>
+                        <button onclick="showpricepizza()">Show price!</button>
+                        <div id="Pizzaprice"></div>
+                    </td>
+                    <td>
+                        <h3>=Good</h3>
+                        <button onclick="showpricecombination()">Show how good this combination costs!</button>
+                        <div id="Combinationprice"></div>
+                    </td>
+            </tr>
+        </table>
+        <script>
+        function showpricecoke(){
+            console.log('$4')
+            document.getElementById("Cokeprice").innerHTML = "$4"
+        }
+           function showpricepizza(){
+               console.log('$15')
+               document.getElementById("Pizzaprice").innerHTML = "$15"
+           }
+           function showpricecombination(){
+               console.log('$19')
+               document.getElementById("Combinationprice").innerHTML = "$19"
+           }
+        </script>
+    </body>
+</html>
