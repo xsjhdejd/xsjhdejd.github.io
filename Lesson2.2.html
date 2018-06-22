@@ -20,6 +20,12 @@ text-align: center;
                 width: 100%;
                
             }
+            .hide{
+                display: none;
+            }
+            .show{
+                
+            }
         </style>
     </head>
     <body>
@@ -37,34 +43,62 @@ text-align: center;
                 <tr>        <!-- table row -->
                     <td>        <!-- table data / cell -->
                         <h3>Coke</h3>
-                        <button onclick="showpricecoke()">Show price!</button>
+                        <button onclick="showpricecoke()" id="btn_show_coke">Show price!</button>
                         <div id="Cokeprice"></div>
+                        <button onclick="hidecoke()"  id="btn_hide_coke" class="hide">Hide Price!</button>
+                        
                     </td>
                     <td>
                         <h3>Pizza</h3>
-                        <button onclick="showpricepizza()">Show price!</button>
+                        <button onclick="showpricepizza()" id="btn_show_pizza" >Show price!</button>
                         <div id="Pizzaprice"></div>
+                        <button onclick="hidepizza()" id="btn_hide_pizza" class="hide">Hide Price!</button>
                     </td>
                     <td>
                         <h3>=Good</h3>
-                        <button onclick="showpricecombination()">Show how good this combination costs!</button>
+                        <button onclick="showpricecombination()" id="btn_show_combination" >Show how good this combination costs!</button>
                         <div id="Combinationprice"></div>
+                        <button onclick="hidecombination()" id="btn_hide_combination" class="hide">Hide Price!</button>
                     </td>
             </tr>
         </table>
         <script>
         function showpricecoke(){
             console.log('$4')
-            document.getElementById("Cokeprice").innerHTML = "$4"
+            document.getElementById("Cokeprice").innerHTML = "$4";
+            document.getElementById("btn_show_coke").style.display = "none";
+            document.getElementById("btn_hide_coke").style.display = "inline-block";
+            
         }
            function showpricepizza(){
                console.log('$15')
-               document.getElementById("Pizzaprice").innerHTML = "$15"
+               document.getElementById("Pizzaprice").innerHTML = "$15";
+               document.getElementById("btn_show_pizza").style.display = "none";
+               document.getElementById("btn_hide_pizza"). style.display = "inline-block";
            }
            function showpricecombination(){
                console.log('$19')
-               document.getElementById("Combinationprice").innerHTML = "$19"
+               document.getElementById("Combinationprice").innerHTML = "$19";
+               document.getElementById("btn_show_combination").style.display = "none";
+               document.getElementById("btn_hide_combination").style.display = "inline-block";
            }
+
+           function hidecoke(){
+               document.getElementById("Cokeprice").innerHTML = "";
+               document.getElementById("btn_show_coke").style.display = "inline-block";
+               document.getElementById("btn_hide_coke").style.display = "none";
+           }
+               function hidepizza(){
+                   document.getElementById("Pizzaprice").innerHTML = ""
+                   document.getElementById("btn_show_pizza").style.display = "inline-block";
+                   document.getElementById("btn_hide_pizza").style.display = "none";
+               }
+               function hidecombination(){
+                   document.getElementById("Combinationprice").innerHTML = "";
+                   document.getElementById("btn_show_combination").style.display = "inline-block";
+                   document.getElementById("btn_hide_combination").style.display = "none";
+               }
+           
         </script>
     </body>
 </html>
