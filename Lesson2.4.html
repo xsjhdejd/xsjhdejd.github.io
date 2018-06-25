@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+    <head>
+            <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope" rel="stylesheet">
+        <style>
+            body{
+    font-family: 'Annie Use Your Telescope', cursive;
+}
+        
+            table tr td{
+                width: 33.33%;
+                border-style: solid;
+    border-width: 5px;
+    border-radius: 25px;
+    color: rgb(8, 67, 163);
+    margin: 10px;
+text-align: center;
+            }
+            img{
+                width: 100%;
+               
+            }
+            .hide{
+                display: none;
+            }
+            .show{
+                
+            }
+            .btn-color{
+                padding: 10px
+            }
+            #btn-green{
+                background-color: green;
+                }
+                #btn-white{
+                    background-color: white;
+                }
+                #btn-blue{
+                    background-color: blue;
+                }
+                #btn-black{
+                    background-color: black;
+                }
+                #btn-gold{
+                    background-color: gold;
+                }
+                #btn-grey{
+                    background-color: grey;
+                }
+                .tbl-black tr td{
+                    border-color: black;
+                }
+                .tbl-gold tr td{
+                    border-color: gold;
+                }
+                .tbl-grey tr td{
+                    border-color: grey;
+                }
+
+        </style>
+    </head>
+    <body>
+        <table id="myTable">     <!-- table -->
+            <tr>        <!-- table row -->
+                <td>        <!-- table data / cell -->
+                    <img src="./img/coke.png" alt="">
+                </td>
+                <td>
+                    <img src="./img/pizza2.jpg" alt="">
+                </td>
+                <td>
+                    <img src="./img/thumb.jpg" alt="">
+                </td>
+                <tr>        <!-- table row -->
+                    <td>        <!-- table data / cell -->
+                        <h3>Coke</h3>
+                        <button onclick="showpricecoke()" id="btn_show_coke">Show price!</button>
+                        <div id="Cokeprice"></div>
+                        <button onclick="hidecoke()"  id="btn_hide_coke" class="hide">Hide Price!</button>
+                        
+                    </td>
+                    <td>
+                        <h3>Pizza</h3>
+                        <button onclick="showpricepizza()" id="btn_show_pizza" >Show price!</button>
+                        <div id="Pizzaprice"></div>
+                        <button onclick="hidepizza()" id="btn_hide_pizza" class="hide">Hide Price!</button>
+                    </td>
+                    <td>
+                        <h3>=Good</h3>
+                        <button onclick="showpricecombination()" id="btn_show_combination" >Show how good this combination costs!</button>
+                        <div id="Combinationprice"></div>
+                        <button onclick="hidecombination()" id="btn_hide_combination" class="hide">Hide Price!</button>
+                    </td>
+            </tr>
+        </table>
+        <div>
+            <button id="btn-green" onclick="clickColor(1)" class="btn-color"></button>
+            <button id="btn-white" onclick="clickColor(2)" class="btn-color"></button>
+            <button id="btn-blue" onclick="clickColor(3)" class="btn-color"></button>
+        </div>
+        <div>
+            <!-- <button id="btn-black" onclick="borderColor('ฺblack')" class="btn-color"></button> -->
+            <button id="btn-black" onclick="borderColor('black')" class="btn-color"></button>
+
+            <button id="btn-gold" onclick="borderColor('gold')" class="btn-color"></button>
+            <button id="btn-grey" onclick="borderColor('grey')" class="btn-color"></button>
+        </div>
+        <script>
+        function showpricecoke(){
+            console.log('$4')
+            document.getElementById("Cokeprice").innerHTML = "$4";
+            document.getElementById("btn_show_coke").style.display = "none";
+            document.getElementById("btn_hide_coke").style.display = "inline-block";
+            
+        }
+           function showpricepizza(){
+               console.log('$15')
+               document.getElementById("Pizzaprice").innerHTML = "$15";
+               document.getElementById("btn_show_pizza").style.display = "none";
+               document.getElementById("btn_hide_pizza"). style.display = "inline-block";
+           }
+           function showpricecombination(){
+               console.log('$19')
+               document.getElementById("Combinationprice").innerHTML = "$19";
+               document.getElementById("btn_show_combination").style.display = "none";
+               document.getElementById("btn_hide_combination").style.display = "inline-block";
+           }
+
+           function hidecoke(){
+               document.getElementById("Cokeprice").innerHTML = "";
+               document.getElementById("btn_show_coke").style.display = "inline-block";
+               document.getElementById("btn_hide_coke").style.display = "none";
+           }
+               function hidepizza(){
+                   document.getElementById("Pizzaprice").innerHTML = ""
+                   document.getElementById("btn_show_pizza").style.display = "inline-block";
+                   document.getElementById("btn_hide_pizza").style.display = "none";
+               }
+               function hidecombination(){
+                   document.getElementById("Combinationprice").innerHTML = "";
+                   document.getElementById("btn_show_combination").style.display = "inline-block";
+                   document.getElementById("btn_hide_combination").style.display = "none";
+               }
+          function clickColor(x){
+              if (x==1){
+                  document.body.style.backgroundColor = "#4caf50";
+              }
+              if (x==2){
+                  document.body.style.backgroundColor = "aliceblue";
+              }
+              if (x==3){
+                  document.body.style.backgroundColor = "aquamarine";
+                  
+              }
+          }
+    function borderColor(color){
+        if (color === 'black'){
+            document.getElementById('myTable').classList.add("tbl-black");
+            document.getElementById('myTable').classList.remove("tbl-grey");
+            document.getElementById('myTable').classList.remove("tbl-gold");
+
+        }
+        if (color === 'gold'){
+            document.getElementById('myTable').classList.add("tbl-gold");
+            document.getElementById('myTable').classList.remove("tbl-black");
+            document.getElementById('myTable').classList.remove("tbl-grey");
+        }
+        if (color === 'grey'){
+            document.getElementById('myTable').classList.add("tbl-grey");
+            document.getElementById('myTable').classList.remove("tbl-black");
+            document.getElementById('myTable').classList.remove("tbl-gold");
+        }
+             
+    }
+        </script>
+    </body>
+</html>
