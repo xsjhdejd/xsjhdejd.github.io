@@ -1,0 +1,60 @@
+<!Doctype>
+<html>
+    <head>
+            <link rel="stylesheet" href="./style.css">
+            <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope" rel="stylesheet">
+            <link rel="shortcut icon" href="./Img/Lenny_face.png" type="image/x-icon">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <style>
+            .margin td img{
+                margin: 10px
+            }
+            .margin img{
+                text-align: center ;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 25px;
+    color: black(8, 67, 163);
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr class="margin">
+                <td>
+                    <img src="./img/question-mark.jpg" width="400px">
+                </td>
+                <td>
+                    <img src="./img/question-mark.jpg" width="400px">
+                </td>
+                <td>
+                    <img src="./img/question-mark.jpg" width="400px">
+                </td>
+            </tr>
+            <tr class="margin">
+                <td>
+                    <img src="./img/question-mark.jpg" width="400px">
+                </td><td>
+                    <img src="./img/question-mark.jpg" width="400px">
+                </td><td>
+                    <img src="./img/question-mark.jpg" width="400px">
+                </td>
+            </tr>
+        </table>
+        <script>
+            var random = Math.floor(Math.random()*6); //this will select a random number from 1-6 
+            $("td").eq(random).addClass("loooser")
+            $("td").click( function() {
+              //  alert("you clicked a card");
+              if ($(this).hasClass("loooser")){
+                //  alert("you are a winner!");
+                $(this).find("img").attr("src", "./img/winner.jpg.jpg")
+              }
+              else{
+                //  alert("you, looossseeeerr!")
+                $(this).find("img").attr("src", "./img/loser.jpg")
+              }
+            });
+        </script>
+    </body>
+</html>
