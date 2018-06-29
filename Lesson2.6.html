@@ -1,0 +1,79 @@
+<!Doctype>
+<html>
+    <head>
+            <title>Card Game</title>
+            <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope" rel="stylesheet">
+            <link rel="shortcut icon" href="./Img/Lenny_face.png" type="image/x-icon">
+            <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <style>
+            .margin td img{
+                margin: 10px
+            }
+            .margin img{
+                text-align: center ;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 25px;
+    color: black(8, 67, 163);
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr class="margin">
+                <td>
+                    <img src="./img/question-mark.jpg" width="400px">
+                </td>
+                <td>
+                    <img src="./img/question-mark.jpg" width="400px">
+                </td>
+                <td>
+                    <img src="./img/question-mark.jpg" width="400px">
+                </td>
+            </tr>
+            <tr class="margin">
+                <td>
+                    <img src="./img/question-mark.jpg" width="400px">
+                </td><td>
+                    <img src="./img/question-mark.jpg" width="400px">
+                </td><td>
+                    <img src="./img/question-mark.jpg" width="400px">
+                </td>
+            </tr>
+        </table>
+
+        <div id="dialog-message" title="You Lose!">
+            <p>
+                You lose! try again next time.
+            </p>
+        </div>
+        <script>
+            var random = Math.floor(Math.random()*6); //this will select a random number from 1-6 
+            $("td").eq(random).addClass("loooser")
+            $("td").click( function() {
+              //  alert("you clicked a card");
+              if ($(this).hasClass("loooser")){
+                //  alert("you are a winner!");
+                $(this).find("img").attr("src", "./img/winner.jpg.jpg");
+              }
+              else{
+                //  alert("you, looossseeeerr!")
+                $(this).find("img").attr("src", "./img/loser.jpg");
+
+                //this will open a dialog box if the player draw the loser card
+                $("#dialog-message").dialog({
+                    modal:true,
+                    buttons: {
+                        Ok: function(){
+                            $( this ).dialog("close");
+                                location.reload(); // this will automatically refresh the page
+                        }
+                    }
+                })
+              }
+            });
+        </script>
+    </body>
+</html>
